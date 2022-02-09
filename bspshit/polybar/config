@@ -1,0 +1,405 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #000000
+background-alt = #674ea7
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #674ea7
+secondary = #cb565d
+alert = #bd2c40
+
+[bar/example]
+monitor = DP-0
+width = 100%
+height = 25
+; offset-x = 1%
+; offset-y = 1%
+; radius = 6.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Ubuntu Nerd Font:size=15:antialias=true;3
+; font-1 = Font Awesome 5 Free: style=Solid: pixelsize=15
+; ; font-1 = Material Icons: style=Regular: pixelsize=13; 2
+
+
+modules-left = bspwm xwindow
+modules-center = 
+modules-right = powermenu pulseaudio-control date2 xkeyboard
+
+tray-position = right
+tray-padding = 1
+tray-maxsize = 20
+;tray-background = #0063ff
+
+wm-name = bspwm
+wm-restack = bspwm
+; enable-ipc = true
+;wm-restack = i3
+
+; override-redirect = true
+
+; scroll-up = bspwm-desknext
+; scroll-down = bspwm-deskprev${colors.secondary}
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/right]
+monitor = DVI-D-1
+width = 100%
+height = 25
+;offset-x = 1%
+;offset-y = 1%
+; radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+; font-0 = Bitstream Vera Sans:size=13:antialias=true;1
+; font-1 = DejaVu Sans:fontformat=truetype:size=13:antialias=false;0
+; font-2 = Bitstream Vera Sans:size=13:antialias=true;1
+;
+font-0 = Ubuntu Nerd Font:size=15:antialias=true;3
+; font-1 = Ubuntu:fontformat=truetype:size=15:antialias=false;0
+; font-2 = Ubuntu:size=15:antialias=true;0
+
+modules-left = bspwm xwindow
+; modules-center = 
+modules-right = memory gputemp cputemp date2 xkeyboard
+; tray-position = right
+; tray-padding = 2
+;tray-background = #0063ff
+
+wm-name = bspwm
+wm-restack = bspwm
+;wm-restack = i3
+
+; override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:64:%
+; label-padding-left = 0
+; label-padding-right = 0
+; label-empty-padding-left = 0
+; label-empty-padding-right = 0
+format-background = #674ea7
+; format-foreground = #000
+format-padding = 2
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+; format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+format-background = #674ea7
+
+label-layout = " %layout%"
+; label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.#f6ca9flabel-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+; ; format-prefix = " "
+; format-prefix-foreground = ${colors.foreground}
+; format-underline = #f90000
+label = %percentage:2%%
+
+[module/cputemp]
+type = custom/script
+exec = sensors | awk '/^Package id 0/ { print $4}'
+interval = 3
+format = CPU: <label>
+format-prefix = 﨏 
+format-prefix-foreground = ${colors.secondary}
+label-foreground =  ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+click-left = kitty btop &
+
+[module/gputemp]
+type = custom/script
+exec = nvidia-settings -q gpucoretemp -t | sed 2d
+interval = 3
+format = GPU: <label>°C
+format-prefix = 﨏 
+format-prefix-foreground = ${colors.secondary}
+label-foreground =  ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+click-left = kitty nvtop &
+
+[module/memory]
+type = internal/memory
+interval = 5
+; format-prefix = "|   "
+; format-prefix-foreground = ${colors.foreground}
+; format-underline = #4bffdc  
+format-background = #000000
+label-foreground = ${colors.foreground}
+label = Ram: %gb_used% / %gb_total%
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %A, %d %B
+date-alt = " %Y-%m-%d"
+
+time = %I:%M %p${colors.secondary}
+time-alt = %H:%M:%S
+
+
+
+; format-prefix = "|   "
+; format-prefix-foreground = ${colors.foreground}
+; format-underline = #0a6cf5
+label-foreground = #c6a280
+format-background = ${colors.background}
+
+label = ﭷ %date% %time%
+
+[module/date2]
+type = custom/script
+exec = date '+%b %d (%a) %I:%M:%S %p'
+interval = 1
+
+format = <label>
+format-prefix = ﭷ
+format-prefix-foreground = #c6a280
+label-foreground =  ${colors.foreground}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+click-right = kitty --hold cal -y &
+click-left = notify-send -t 5000 "$(date '+%D')" "$(cal)" &
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 2
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+label-padding = 0
+label-foreground = ${colors.foreground}
+
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.analog-stereo: Speakers" listen
+click-right = exec kitty pulsemixer &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.usb-Samson_Technologies_Samson_GoMic-00.analog-stereo" next-sink
+scroll-up = pulseaudio-control --volume-max 100 up
+scroll-down = pulseaudio-control --volume-max 100 down
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = false
+
+format-spacing = 1
+
+label-open = גּ
+label-open-foreground = ${colors.secondary}
+label-close = cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = suspend
+menu-0-2-exec = menu-open-3
+
+; menu-1-0 = cancel
+; menu-1-0-exec = menu-open-0
+; menu-1-1 = reboot
+; menu-1-1-exec = loginctl reboot
+
+menu-1-0 = YES
+menu-1-0-exec = loginctl reboot
+menu-1-1 = NO
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = YES
+menu-2-0-exec = loginctl poweroff
+menu-2-1 = NO
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = YES
+menu-3-0-exec = loginctl suspend
+menu-3-1 = NO
+menu-3-1-exec = menu-open-0
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+; pseudo-transparency = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

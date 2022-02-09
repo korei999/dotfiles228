@@ -1,0 +1,19 @@
+/** Basic config file **/
+
+configuration {
+	display-drun:	      "Applications:";
+	display-window:	      "Windows: ";
+	drun-display-format:  "{icon} {name}";
+	modi:		      "window,run,drun";
+	show-icons:           true;
+	icon-theme:           "WhiteSur-dark";
+	font:	              "Ubuntu 14";
+}
+//@theme "/home/korei/rofi-themes/User Themes/flamingo.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/home/korei/.local/share/rofi/themes/lb.rasi"
+@theme "/home/korei/.local/share/rofi/themes/arc-red-dark.rasi"
+
+element-icon {
+	size: 24;
+}

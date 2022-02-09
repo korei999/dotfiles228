@@ -1,0 +1,7 @@
+setxkbmap us,ru -option grp:win_space_toggle
+dwmblocks 2>&1 >/dev/null &
+nitrogen --restore &
+xbindkeys &
+picom --experimental-backends &
+exec dwm
+

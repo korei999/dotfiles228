@@ -26,6 +26,7 @@ bspc config presel_feedback_color "#000000"
 # bspc rule -a Chromium desktop='^2'
 bspc rule -a mpv state=floating follow=on
 bspc rule -a imv state=floating follow=on
+bspc rule -a GParted state=floating follow=on
 bspc rule -a Zathura state=tiled
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
@@ -33,7 +34,9 @@ bspc rule -a Screenkey manage=off
 killall -q pipewire
 killall -q mpris-proxy
 killall -q wireplumber
+killall -q polkit-gnome-au
 
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 xset r rate 300 30
 setxkbmap -layout us,ru,ua
 ~/.config/polybar/launch.sh

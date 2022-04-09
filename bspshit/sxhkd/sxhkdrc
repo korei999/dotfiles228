@@ -13,6 +13,10 @@ super + p
 super + shift + p
 	rofi -show run
 
+# launch task manager
+ctrl + shift + Escape
+	kitty btop
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd

@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "sonokai"
 lvim.transparent_window = true
 
 vim.opt.backup = false -- creates a backup file
@@ -45,11 +45,7 @@ vim.opt.writebackup = false -- if a file is being edited by another program (or 
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 5 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 5 -- insert 2 spaces for a tab
-vim.opt.relativenumber = false -- set relative numbered lines
-vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes" -- always show the sign column otherwise it would shift the text each time
-vim.opt.spell = false
-vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 
@@ -192,6 +188,8 @@ lvim.plugins = {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
+     "https://github.com/catppuccin/nvim",
+     "https://github.com/sainnhe/sonokai",
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

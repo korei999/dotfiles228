@@ -36,13 +36,13 @@ XF86AudioPrev
 
 # screenshots /w scrot
 super + @Print
-	scrot
+	scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png'
 
 super + shift + @Print
-	scrot -s -f
+	scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png' -s -f
 
 super + ctrl + @Print
-	scrot  -u
+	scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png' -u
 ##############
 
 super + e

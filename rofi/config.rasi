@@ -6,7 +6,7 @@ configuration {
 	drun-display-format:  "{icon} {name}";
 	modi:		      "window,run,drun";
 	show-icons:           true;
-	icon-theme:           "WhiteSur-dark";
+	icon-theme:           "Papirus-Dark";
 	font:	              "Ubuntu 14";
 }
 //@theme "/home/korei/rofi-themes/User Themes/flamingo.rasi"
@@ -16,4 +16,8 @@ configuration {
 
 element-icon {
 	size: 24;
+}
+
+window {
+    border-radius:                  12;
 }

@@ -20,4 +20,3 @@ require('material').setup({
 		eob_lines = false 
 	}
 })
-vim.cmd 'colorscheme molokai'

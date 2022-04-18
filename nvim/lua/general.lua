@@ -1,4 +1,5 @@
 -- General config
+vim.cmd 'colorscheme monokai_pro'
 vim.opt['number'] = true
 vim.opt['ruler'] = true
 vim.opt['splitright'] = true

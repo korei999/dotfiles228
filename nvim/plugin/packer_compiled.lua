@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bracey.vim"] = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/bracey.vim",
-    url = "https://github.com/turbio/bracey.vim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -99,11 +94,6 @@ _G.packer_plugins = {
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["cphelper.nvim"] = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/cphelper.nvim",
-    url = "https://github.com/p00f/cphelper.nvim"
-  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -118,11 +108,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  hop = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/hop",
-    url = "https://github.com/phaazon/hop.nvim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
@@ -139,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
-  ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
-  },
   ["material.nvim"] = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/material.nvim",
@@ -158,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/monokai.nvim",
     url = "https://github.com/tanvirtin/monokai.nvim"
-  },
-  neoformat = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -188,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/nvim-compe",
-    url = "https://github.com/hrsh7th/nvim-compe"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -249,11 +219,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/korei/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["rooter.nvim"] = {
-    loaded = true,
-    path = "/home/korei/.local/share/nvim/site/pack/packer/start/rooter.nvim",
-    url = "https://github.com/ygm2/rooter.nvim"
   },
   sonokai = {
     loaded = true,

@@ -1,20 +1,45 @@
 -- Dashboard config
-vim.g.dashboard_custom_header = {
-    '                                                              ',
-    '    ⢀⣀⣤⣤⣤⠤⢤⣤⣤⣤⣤⣄⣀⡀           ⢀⣠⣤⣄⡀            ⣀⣀⣀⣤⣤⣤⣤⣤⣤⣤⣤⣀⡀   ',
-    ' ⢀⣤⠚⠩⠁⡄ ⠠⣤⠒⠒⣂ ⢈⣨⣭⣿⠛⠶⣦⣤⣄⡀   ⢠⣾⡟⠉⠉⠝⠿⠇    ⢀⣠⡤⠔⠒⣻⠟⠋⠩⠉⢁⣀⡀  ⣶  ⠙⡛⠷  ',
-    ' ⠸⢟⡠⠒⢊⡤  ⠋⣠ ⠈⣉⣉⣉⣉⣀⣛⣿⡒⠭⡿⢿⣷⣤⣤⣀⣽⣇⣴⠆⣴⡃⢀⣠⣤⠴⣚⣫⡥ ⠒⠛⠁⣀⣉⣉⣙⢏⡉  ⢀⣼⣤⣜⠳⡦⠂  ',
-    '   ⠐⠚⠫⣤⠖⢣⣤⡕ ⠉⣩⣤⠔ ⠂⣋⣭⣥⣤⠴⠛⣛⠈⢩⣿⠿⠛⢉  ⡐⠞⠫⢍⠙⣓⠢⠴⣥⣍⣙⠛⢓⡢⢤⣬⠉⠅ ⣤⡜⢛⠻⠛⠉⠁   ',
-    '      ⠘⢔⢎⣡⡔⠂⣠⡿⠁⠒⢛⡻⢛⣩⠅  ⠉  ⠚⣯⣄⢠⣿⢀⣾⠇ ⠓ ⠁⠂⠈⠍⠐⠈⡉⣿⠛⣛⠛⠉⣤⣰⣿⣿⡟⠛⠁      ',
-    '        ⠙⠛⠐⠚⠋ ⠒⣲⡿⠇⣋        ⢺⡏⠈⣀ ⠉⠈        ⠙⢿⠟⢰⣖⡢ ⠂⠒⠚⠉         ',
-    '             ⣴⠛⠅⢀⣾⠟⢃       ⢹⠃⠠⠁⠈⠩         ⢠⣿ ⣀⢹⣿⡷             ',
-    '             ⢿⣤⢚⣫⠅         ⢸⠇ ⢚ ⢀         ⣸⡇ ⠉⣿⣿⠇             ',
-    '             ⠈⠛⢻⣥⡚⠔⣠⢣⣄⡀    ⢸⡇ ⢘ ⠈ ⠠⠈    ⣀⣰⡿⣧⣄⠾⠋⠁              ',
-    '                ⠈⠑⠁        ⠘⣿⡀⣈⣀    ⠈  ⠈⠙⠁                    ',
-    '                            ⠘⣷⠁                               ',
-    '                             ⠙⣤                               ',
-    '                              ⠛⠂                              ',
-    '                                                              '
+-- vim.g.dashboard_custom_header = {
+--     '                                                              ',
+--     '    ⢀⣀⣤⣤⣤⠤⢤⣤⣤⣤⣤⣄⣀⡀           ⢀⣠⣤⣄⡀            ⣀⣀⣀⣤⣤⣤⣤⣤⣤⣤⣤⣀⡀   ',
+--     ' ⢀⣤⠚⠩⠁⡄ ⠠⣤⠒⠒⣂ ⢈⣨⣭⣿⠛⠶⣦⣤⣄⡀   ⢠⣾⡟⠉⠉⠝⠿⠇    ⢀⣠⡤⠔⠒⣻⠟⠋⠩⠉⢁⣀⡀  ⣶  ⠙⡛⠷  ',
+--     ' ⠸⢟⡠⠒⢊⡤  ⠋⣠ ⠈⣉⣉⣉⣉⣀⣛⣿⡒⠭⡿⢿⣷⣤⣤⣀⣽⣇⣴⠆⣴⡃⢀⣠⣤⠴⣚⣫⡥ ⠒⠛⠁⣀⣉⣉⣙⢏⡉  ⢀⣼⣤⣜⠳⡦⠂  ',
+--     '   ⠐⠚⠫⣤⠖⢣⣤⡕ ⠉⣩⣤⠔ ⠂⣋⣭⣥⣤⠴⠛⣛⠈⢩⣿⠿⠛⢉  ⡐⠞⠫⢍⠙⣓⠢⠴⣥⣍⣙⠛⢓⡢⢤⣬⠉⠅ ⣤⡜⢛⠻⠛⠉⠁   ',
+--     '      ⠘⢔⢎⣡⡔⠂⣠⡿⠁⠒⢛⡻⢛⣩⠅  ⠉  ⠚⣯⣄⢠⣿⢀⣾⠇ ⠓ ⠁⠂⠈⠍⠐⠈⡉⣿⠛⣛⠛⠉⣤⣰⣿⣿⡟⠛⠁      ',
+--     '        ⠙⠛⠐⠚⠋ ⠒⣲⡿⠇⣋        ⢺⡏⠈⣀ ⠉⠈        ⠙⢿⠟⢰⣖⡢ ⠂⠒⠚⠉         ',
+--     '             ⣴⠛⠅⢀⣾⠟⢃       ⢹⠃⠠⠁⠈⠩         ⢠⣿ ⣀⢹⣿⡷             ',
+--     '             ⢿⣤⢚⣫⠅         ⢸⠇ ⢚ ⢀         ⣸⡇ ⠉⣿⣿⠇             ',
+--     '             ⠈⠛⢻⣥⡚⠔⣠⢣⣄⡀    ⢸⡇ ⢘ ⠈ ⠠⠈    ⣀⣰⡿⣧⣄⠾⠋⠁              ',
+--     '                ⠈⠑⠁        ⠘⣿⡀⣈⣀    ⠈  ⠈⠙⠁                    ',
+--     '                            ⠘⣷⠁                               ',
+--     '                             ⠙⣤                               ',
+--     '                              ⠛⠂                              ',
+--     '                                                              '
+-- }
+
+vim.g.dashboard_custom_header = {                                                                                
+'   @@@@@@@@@@@          @,                                                      ',
+'  @@          @@     .@@ %@%.@@@@@       @@@@@@@@@@@@@@@     @@                 ',
+'  @@   @@@@@@@@      @@           @@@@    @@                 @@                 ',
+'  @@@@@@@@@@         @@              &@@   @@@@@@@@@         @@                 ',
+'  %@%       .@@@      @@               @@   @@               @@                 ',
+'  #@#          @@@     @@             @@.   @@              @@                  ',
+'  %@@            @@      @@@@    @@@@@                      @@@@@@@@@@@@@@      ',
+'                                                                                ',
+'                                                                                ',
+'                                                                                ',
+'                                 @@                            @@@@@%           ',
+'       @@                                           @@@@@@    @@    @@          ',
+'        @@         @@@*         @@               @@@      @@@(@(     @@         ',
+'        @@        @@            @@           @@ @@          @@@(      @@        ',
+'         @@     &@@             @@            @@@@           @@@       @@       ',
+'          @@   (@@              #@*           @@@            @@@       @@       ',
+'          @@   @@                @@            @@            %@@       @@       ',
+'           @@ @@                 @@            @@             @@        @@      ',
+'           @@@@                  @@            @@             @@        @@      ',
+'           @@@                   @             @@             @@                ',
+'                                               @@                               ',
+'                                                                                '
 }
 
 vim.g.dashboard_default_executive = 'telescope'
@@ -24,10 +49,6 @@ vim.g.dashboard_custom_section = {
         description = { '  New File                       LDR n' },
         command = 'enew',
     },
-    b = {
-        description = { '  Competitive                    LDR c' },
-        command = 'CphReceive',
-    },
     c = {
         description = { '  Find Files                     LDR f' },
         command = 'Telescope find_files',
@@ -36,6 +57,14 @@ vim.g.dashboard_custom_section = {
         description = { '  Find History                   LDR o' },
         command = 'Telescope oldfiles',
     },
+    e = {
+        description = { '  Configuration                       '},
+        command = 'e ~/.config/nvim/lua/general.lua',
+    },
+    f = {
+        description = { '  Plugins                             '},
+        command = 'e ~/.config/nvim/lua/plugins.lua',
+    },
 }
 
 local plugins_count = vim.fn.len(
@@ -43,7 +72,7 @@ local plugins_count = vim.fn.len(
 )
 
 vim.g.dashboard_custom_footer = {
-    '-- Neovim Loaded ' .. plugins_count .. ' Plugins --',
+    '-- Roflvim Loaded ' .. plugins_count .. ' Plugins --',
 }
 
 vim.cmd([[highlight DashboardHeader guifg=#ffffff]])

@@ -21,11 +21,11 @@ vim.opt['clipboard'] = 'unnamedplus'
 vim.opt['swapfile'] = false
 vim.opt['mouse'] = 'a'
 vim.opt['updatetime'] = 300
+vim.opt['timeoutlen'] = 0
 vim.opt['ignorecase'] = true
 -- vim.opt['smartcase'] = true
 
 -- Persistent undo
--- mkdir $HOME/.vim/undo
 vim.opt['undofile'] = true
 vim.opt['undodir'] = '/home/korei/.cache/nvim/undo'
 vim.opt['undolevels'] = 1000
@@ -45,3 +45,36 @@ vim.cmd([[
      nnoremap D "_D
      vnoremap d "_d
 ]])
+ --bindings
+map = vim.api.nvim_set_keymap
+
+-- LSP bindings: nivm/lua/plug_config/lsp_config/lsp-config.lua
+
+map('n', '<Leader>n', ':enew<CR>', { noremap = true, silent = true })
+map('n', '<Leader>f', ':Telescope find_files<CR>', { noremap = true, silent = true })
+map('n', '<Leader>o', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
+map('n', '<Leader>[', ':vertical resize +7<CR>', { noremap = true, silent = true })
+map('n', '<Leader>]', ':vertical resize -7<CR>', { noremap = true, silent = true })
+map('n', '<Leader>cc', ':ColorizerToggle<CR>', { noremap = true, silent = true })
+map('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
+map('n', '<Leader>b', ':Bracey<CR>', { noremap = true, silent = true })
+map('n', '<Leader>bb', ':BraceyStop<CR>', { noremap = true, silent = true })
+map('n', '<Leader>bbb', ':BraceyReload<CR>', { noremap = true, silent = true })
+
+map('n', 'f', ':BufferLinePick<CR>', { noremap = true, silent = true })
+map('n', 'F', ':BufferLinePickClose<CR>', { noremap = true, silent = true })
+map('n', 'm.', ':BufferLineMoveNext<CR>', { noremap = true, silent = true })
+map('n', 'm,', ':BufferLineMovePrev<CR>', { noremap = true, silent = true })
+
+map('n', '<Leader>dd', ':ToggleDiag<CR>', { noremap = true, silent = true })
+map('n', '<leader>du', '<Plug>(toggle-lsp-diag-underline)', {silent = true })
+map('n', '<leader>ds', '<Plug>(toggle-lsp-diag-signs)', {silent = true })
+map('n', '<leader>dv', '<Plug>(toggle-lsp-diag-vtext)', {silent = true })
+map('n', '<leader>di', '<Plug>(toggle-lsp-diag-update_in_insert)', {silent = true })
+
+map('n', '<F7>', ':NvimTreeToggle<CR>', {silent = true })
+
+map('n', '<leader>md', ':MarkdownPreviewToggle<CR>', {silent = true })
+map('n', '<Leader><Space>', ':noh<CR>', { noremap = true, silent = true })
+
+map('n', '<Leader>p', ':Neoformat<CR>', { noremap = true, silent = true })

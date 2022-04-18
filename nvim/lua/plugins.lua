@@ -1,17 +1,14 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    -- apperative plugins
     use 'L3MON4D3/LuaSnip'
     use 'glepnir/dashboard-nvim'
     use 'marko-cerovac/material.nvim'
     use 'sainnhe/sonokai'
     use 'tanvirtin/monokai.nvim'
     use 'tomasr/molokai'
-  
-    -- functional plugins
+
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-compe'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -29,9 +26,6 @@ return require('packer').startup(function(use)
     use 'kdheepak/lazygit.nvim'
     use 'terrortylor/nvim-comment'
     use 'rafamadriz/friendly-snippets'
-    use {'turbio/bracey.vim', run = 'cd app & npm install --prefix server'}
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
-    use 'sbdchd/neoformat'
   
     use {
       'lewis6991/gitsigns.nvim',
@@ -41,23 +35,8 @@ return require('packer').startup(function(use)
     }
   
     use {
-    'phaazon/hop.nvim',
-    as = 'hop'
-    }
-  
-    use {
       'akinsho/nvim-bufferline.lua',
       requires = 'kyazdani42/nvim-web-devicons'
-    }
-  
-    use {
-      'p00f/cphelper.nvim',
-      rocks = 'http',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'ygm2/rooter.nvim',
-        opt = true
-      }
     }
   
     use {

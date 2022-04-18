@@ -75,5 +75,5 @@ vim.g.dashboard_custom_footer = {
     '-- Roflvim Loaded ' .. plugins_count .. ' Plugins --',
 }
 
-vim.cmd([[highlight DashboardHeader guifg=#ffffff]])
+vim.cmd([[highlight DashboardHeader guifg=#66d9ef]])
 

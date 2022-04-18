@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
     use 'sainnhe/sonokai'
     use 'tanvirtin/monokai.nvim'
     use 'tomasr/molokai'
+    use 'bluz71/vim-nightfly-guicolors'
 
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp'

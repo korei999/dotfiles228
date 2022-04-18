@@ -1,23 +1,29 @@
-require'lualine'.setup {
+require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'material-nvim',
-    },
+    theme = 'modus-vivendi',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+  },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
-      lualine_y = {
-        {
-          'diagnostics',
-          sources = { 'nvim_diagnostic' },
-          color_error = '#BF616A',
-          color_warn = '#EBCB8B',
-          color_info = '#88C0D0',
-          color_hint = '#3A4151',
-        },
-      },
+    lualine_y = {'progress'},
     lualine_z = {'location'}
   },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
 }

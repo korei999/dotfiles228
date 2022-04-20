@@ -107,7 +107,7 @@ super + bracket{left,right}
 super + button{4,5}
 	bspc desktop -f {prev,next}.local
 
-# fosuc next monitor
+# focus next monitor
 super + shift + bracket{left,right}
 	bspc monitor --focus {prev,next}
 

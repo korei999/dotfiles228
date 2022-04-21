@@ -78,10 +78,10 @@ exec_always --no-startup-id /home/korei/.config/i3/startup.sh
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tabbed -r 2 st -w ''
+bindsym $mod+Return exec --no-startup-id tabbed -r 2 st -w ''
 
 # kill focused window
-bindsym $mod+w kill
+# bindsym $mod+w kill
 
 # start ROFI (a program launcher)
 bindsym $mod+p exec --no-startup-id rofi -show drun
@@ -132,7 +132,7 @@ bindsym $mod+f fullscreen toggle
 for_window [class=".*"] split toggle 
 
 # kill command resets the split
-# bindsym $mod+shift+q split toggle kill 
+bindsym $mod+w split toggle kill 
 
 # bindsym $mod+w layout tabbed
 bindsym $mod+t layout toggle split

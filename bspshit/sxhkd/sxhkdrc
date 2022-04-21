@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	tabbed -r 2 st -w ''
 
 # program launcher
 super + p
@@ -107,7 +107,7 @@ super + bracket{left,right}
 super + button{4,5}
 	bspc desktop -f {prev,next}.local
 
-# focus next monitor
+# fosuc next monitor
 super + shift + bracket{left,right}
 	bspc monitor --focus {prev,next}
 

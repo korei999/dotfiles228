@@ -15,7 +15,7 @@ super + shift + p
 
 # launch task manager
 ctrl + shift + Escape
-	kitty btop
+	st -e sh -c 'tput civis;btop;stty raw;dd bs=1 count=1 of=/dev/null' &
 
 # make sxhkd reload its configuration files:
 super + Escape

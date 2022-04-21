@@ -8,7 +8,7 @@ bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 10
 
 
 bspc config border_width        3
-bspc config window_gap          4
+bspc config window_gap          3
 bspc config top_padding         0
 bspc config focus_follows_pointer true
 
@@ -29,26 +29,26 @@ bspc config presel_feedback_color "#000000"
 # bspc rule -a Chromium desktop='^2'
 bspc rule -a mpv state=floating follow=on
 bspc rule -a imv state=floating follow=on
+bspc rule -a Sxiv state=floating follow=on
 bspc rule -a GParted state=floating follow=on
 bspc rule -a Steam state=floating follow=on
 bspc rule -a Zathura state=tiled
-bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 killall -q pipewire
 killall -q pipewire-pulse
 killall -q mpris-proxy
 killall -q wireplumber
-killall -q polkit-gnome-au
+killall -q polkit-gnome-authentication-agent-1
 
-xset r rate 250 45
-setxkbmap -layout us,ru,ua
+xset r rate 200 50 &
+setxkbmap -layout us,ru,ua &
 ~/.config/polybar/launch.sh &
 nvidia-settings --load-config-only &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 blueman-applet &
-picom --experimental-backends &
+picom &
 nitrogen --restore &
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &

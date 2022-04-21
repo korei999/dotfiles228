@@ -29,6 +29,7 @@ alert = #bd2c40
 
 [bar/example]
 monitor = DP-0
+; monitor = DVI-D-1
 width = 100%
 height = 25
 ; offset-x = 1%
@@ -252,7 +253,8 @@ label-foreground =  ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-click-left = kitty btop &
+click-left = st -e sh -c 'tput civis;st btop;stty raw;dd bs=1 count=1 of=/dev/null' &
+; kitty btop &
 
 [module/gputemp]
 type = custom/script
@@ -265,7 +267,8 @@ label-foreground =  ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-click-left = kitty nvtop &
+click-left = st -e sh -c 'tput civis;st nvtop;stty raw;dd bs=1 count=1 of=/dev/null' &
+; kitty nvtop &
 
 [module/memory]
 type = internal/memory
@@ -309,7 +312,7 @@ label-foreground =  ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-click-right = kitty --hold cal -y &
+click-right = st -e sh -c 'tput civis;cal -y;stty raw;dd bs=1 count=1 of=/dev/null' &
 click-left = notify-send -t 5000 "$(date '+%D')" "$(cal)" &
 
 [module/temperature]
@@ -341,10 +344,11 @@ label-foreground = ${colors.foreground}
 # You can copy-paste your options for each possible action, which is more
 # trouble-free but repetitive, or apply only the relevant ones (for example
 # --sink-blacklist is only needed for next-sink).
-exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.analog-stereo: Speakers" listen
-click-right = exec kitty pulsemixer &
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.analog-stereo: Speakers" --sink-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo: Mobo" listen
+click-right = sh -c 'tput civis;st pulsemixer;stty raw;dd bs=1 count=1 of=/dev/null' &
+; kitty pulsemixer &
 click-left = pulseaudio-control togmute
-click-middle = pulseaudio-control --sink-blacklist "alsa_output.usb-Samson_Technologies_Samson_GoMic-00.analog-stereo" next-sink
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.usb-Samson_Technologies_Samson_GoMic-00.analog-stereo" --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1" next-sink
 scroll-up = pulseaudio-control --volume-max 100 up
 scroll-down = pulseaudio-control --volume-max 100 down
 

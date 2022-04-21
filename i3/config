@@ -64,7 +64,7 @@ font pango:Ubuntu 10
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always /home/korei/.config/i3/startup.sh
+exec_always --no-startup-id /home/korei/.config/i3/startup.sh
 
 
 # Use pactl to adjust volume in PulseAudio.

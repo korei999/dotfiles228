@@ -26,7 +26,7 @@ for_window [class="^.*"] border pixel 3
 bindsym $mod+w Kill
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #000000 #000000 #ffffff #674ea7   #674ea7
+client.focused          #674ea7 #000000 #ffffff #674ea7   #674ea7
 client.focused_inactive #000000 #000000 #ffffff #000000   #000000
 client.unfocused        #000000 #000000 #000000 #000000   #000000
 client.urgent           #000000 #900000 #ffffff #900000   #900000

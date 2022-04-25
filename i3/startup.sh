@@ -7,7 +7,7 @@ killall -q nm-applet
 
 xset r rate 200 50 &
 setxkbmap -layout us,ru,ua &
-~/.config/polybar/launch.sh &
+~/.config/i3/polybar/launch.sh &
 nvidia-settings --load-config-only &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &

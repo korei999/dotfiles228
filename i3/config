@@ -17,9 +17,13 @@ smart_gaps on
 #start in opposite orientation from your monitor
 default_orientation vertical 
 
+exec_always --no-startup-id autotiling
+
 for_window [class="^.*"] border pixel 3
-gaps inner 6
+# gaps inner 5
 # gaps outer 50
+
+bindsym $mod+w Kill
 
 client.focused #555555 #555555 #ffffff #674ea7 #674ea7
 
@@ -93,10 +97,10 @@ bindsym $mod+Shift+p exec --no-startup-id rofi -show run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the currofi -show drun
 bindsym $mod+Left focus left
@@ -129,10 +133,10 @@ bindsym $mod+f fullscreen toggle
 # bindsym $mod+s layout stacking
 
 # toggles split at each new window
-for_window [class=".*"] split toggle 
+# for_window [class=".*"] split toggle 
 
 # kill command resets the split
-bindsym $mod+w split toggle kill 
+# bindsym $mod+w split toggle kill 
 
 # bindsym $mod+w layout tabbed
 bindsym $mod+t layout toggle split

@@ -17,6 +17,7 @@ smart_gaps on
 #start in opposite orientation from your monitor
 default_orientation vertical 
 
+# Must have autotiling script
 exec_always --no-startup-id autotiling
 
 for_window [class="^.*"] border pixel 3

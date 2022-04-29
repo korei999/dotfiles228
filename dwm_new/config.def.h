@@ -93,14 +93,27 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *rofi2[] = { "rofi", "-show", "run"};
 static const char *rofi[] = { "rofi", "-show", "drun"};
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *scrotcmd[]  = { "scrot", "scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png'", NULL };
-static const char *scrotscmd[]  = { "scrot", "scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png'", "-s", "-f", NULL };
-static const char *scrotucmd[]  = { "scrot", "scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png'", "-u", NULL };
+static const char *scrotcmd[]  = { "scrot", "/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png", NULL };
+static const char *scrotscmd[]  = { "scrot", "/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png", "-s", "-f", NULL };
+static const char *scrotucmd[]  = { "scrot", "/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png", "-u", NULL };
 static const char *keeb[] = {"pkill", "-RTMIN+11", "dwmblocks", NULL };
 static const char *pcmanfm[] = {"pcmanfm", NULL};
+static const char *AudioPlay[] = {"playerctl", "play-pause", NULL};
+static const char *AudioNext[] = {"playerctl", "next", NULL};
+static const char *AudioPrev[] = {"playerctl", "previous", NULL};
+static const char *AudioLower[] = {"pulseaudio-control", "--volume-max", "100", "down", NULL};
+static const char *AudioRaise[] = {"pulseaudio-control", "--volume-max", "100", "up", NULL};
+
+#include <X11/XF86keysym.h>
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+    { 0,                XF86XK_AudioPlay,	   spawn,	       {.v = AudioPlay} },
+    { 0,                XF86XK_AudioPause,	   spawn,	       {.v = AudioPlay} },
+    { 0,	    	    XF86XK_AudioNext,	   spawn,	       {.v = AudioNext} },
+    { 0,    			XF86XK_AudioPrev,	   spawn,	       {.v = AudioPrev} },
+    { 0,          XF86XK_AudioLowerVolume,	   spawn,	       {.v = AudioLower} },
+    { 0,          XF86XK_AudioRaiseVolume,	   spawn,	       {.v = AudioRaise} },
 	{ MODKEY,			            XK_e,	   spawn,	       {.v = pcmanfm} },
 	{ MODKEY,		            	XK_space,  spawn,	       {.v = keeb} },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = scrotcmd} },
@@ -141,9 +154,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_f,      togglefullscr,  {0} },
 	// { MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY,                   XK_grave,      togglefloating, {0} },
-    { MODKEY,             XK_Cyrillic_io,      togglefloating, {0} },
-  	{ MODKEY,              XK_apostrophe,      togglefloating, {0} },
+	{ MODKEY,                       XK_grave,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },

@@ -7,17 +7,14 @@ configuration {
 	modi:		      "window,run,drun";
 	show-icons:           true;
 	icon-theme:           "Papirus-Dark";
-	font:	              "Ubuntu 14";
+	font:	              "Ubuntu 15";
 }
-//@theme "/home/korei/rofi-themes/User Themes/flamingo.rasi"
-//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-//@theme "/home/korei/.local/share/rofi/themes/lb.rasi"
-@theme "/home/korei/.local/share/rofi/themes/arc-red-dark.rasi"
+@theme "/home/korei/.config/rofi/dmenu.rasi"
 
-element-icon {
-	size: 24;
-}
+/* element-icon { */
+/* 	size: 24; */
+/* } */
 
-window {
-    border-radius:                  12;
-}
+/* window { */
+/*     border-radius:                  12; */
+/* } */

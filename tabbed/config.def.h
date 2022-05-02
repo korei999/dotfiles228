@@ -2,12 +2,12 @@
 
 /* appearance */
 static const char font[]        = "JetBrains Mono NL:size=12";
-static const char* normbgcolor  = "#222222";
-static const char* normfgcolor  = "#cccccc";
-static const char* selbgcolor   = "#555555";
-static const char* selfgcolor   = "#dfdfdf";
-static const char* urgbgcolor   = "#111111";
-static const char* urgfgcolor   = "#cc0000";
+static const char* normbgcolor  = "#323742";
+static const char* normfgcolor  = "#dfdfdf";
+static const char* selbgcolor   = "#c6a280";
+static const char* selfgcolor   = "#000000";
+static const char* urgbgcolor   = "#000000";
+static const char* urgfgcolor   = "#cb565d";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const char titletrim[]   = "...";

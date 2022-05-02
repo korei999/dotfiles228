@@ -43,10 +43,14 @@ vim.cmd ([[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == 'Nv
 vim.cmd('command CDD cd %:p:h')
 
 vim.cmd([[
-     nnoremap x "_x
-     nnoremap d "_d
-     nnoremap D "_D
-     vnoremap d "_d
+    nnoremap x "_x
+    nnoremap d "_d
+    nnoremap D "_D
+    vnoremap d "_d
+    map i <Up>
+    map j <Left>
+    map k <Down>
+    noremap h i
 ]])
 
  --bindings
@@ -54,10 +58,6 @@ map = vim.api.nvim_set_keymap
 
 -- LSP bindings: nivm/lua/plug_config/lsp_config/lsp-config.lua
 
-map('n', 'a', '<insert>', { noremap = true, silent = true })
-map('n', 'i', '<Up>', { noremap = true, silent = true })
-map('n', 'j', '<Left>', { noremap = true, silent = true })
-map('n', 'k', '<Down>', { noremap = true, silent = true })
 map('n', '<Leader>n', ':enew<CR>', { noremap = true, silent = true })
 map('n', '<Leader>f', ':Telescope find_files<CR>', { noremap = true, silent = true })
 map('n', '<Leader>o', ':Telescope oldfiles<CR>', { noremap = true, silent = true })

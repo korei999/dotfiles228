@@ -27,7 +27,6 @@ vim.opt['timeoutlen'] = 0
 vim.opt['smartcase'] = true
 vim.opt['guicursor'] = 'i:block'
 
-
 -- Persistent undo
 vim.opt['undofile'] = true
 vim.opt['undodir'] = '/home/korei/.cache/nvim/undo'
@@ -47,10 +46,11 @@ vim.cmd([[
     nnoremap d "_d
     nnoremap D "_D
     vnoremap d "_d
+    noremap h i
+    noremap H I
     map i <Up>
     map j <Left>
     map k <Down>
-    noremap h i
 ]])
 
  --bindings

@@ -23,8 +23,10 @@ vim.opt['swapfile'] = false
 vim.opt['mouse'] = 'a'
 vim.opt['updatetime'] = 300
 vim.opt['timeoutlen'] = 0
-vim.opt['ignorecase'] = true
--- vim.opt['smartcase'] = true
+-- vim.opt['ignorecase'] = true
+vim.opt['smartcase'] = true
+vim.opt['guicursor'] = 'i:block'
+
 
 -- Persistent undo
 vim.opt['undofile'] = true
@@ -46,11 +48,16 @@ vim.cmd([[
      nnoremap D "_D
      vnoremap d "_d
 ]])
+
  --bindings
 map = vim.api.nvim_set_keymap
 
 -- LSP bindings: nivm/lua/plug_config/lsp_config/lsp-config.lua
 
+map('n', 'a', '<insert>', { noremap = true, silent = true })
+map('n', 'i', '<Up>', { noremap = true, silent = true })
+map('n', 'j', '<Left>', { noremap = true, silent = true })
+map('n', 'k', '<Down>', { noremap = true, silent = true })
 map('n', '<Leader>n', ':enew<CR>', { noremap = true, silent = true })
 map('n', '<Leader>f', ':Telescope find_files<CR>', { noremap = true, silent = true })
 map('n', '<Leader>o', ':Telescope oldfiles<CR>', { noremap = true, silent = true })

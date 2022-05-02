@@ -1,6 +1,7 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+    use "fladson/vim-kitty"
     use 'L3MON4D3/LuaSnip'
     use 'glepnir/dashboard-nvim'
     use 'marko-cerovac/material.nvim'

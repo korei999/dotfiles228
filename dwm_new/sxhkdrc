@@ -1,0 +1,21 @@
+# launch task manager
+ctrl + shift + Escape
+	st -e sh -c 'tput civis;btop;stty raw;dd bs=1 count=1 of=/dev/null'
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd; \
+    notify-send "sxhkd restarted"
+
+# bluetooth headsed media controls (mpris-proxy and Playerctl required)
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioPause
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous

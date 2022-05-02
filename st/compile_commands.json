@@ -1,0 +1,58 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-std=c99",
+      "-I/usr/X11R6/include",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-4",
+      "-pthread",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-4",
+      "-pthread",
+      "-DVERSION=\"0.8.5\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O1",
+      "-c",
+      "st.c"
+    ],
+    "directory": "/home/korei/suckless/st",
+    "file": "/home/korei/suckless/st/st.c"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-std=c99",
+      "-I/usr/X11R6/include",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-4",
+      "-pthread",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/sysprof-4",
+      "-pthread",
+      "-DVERSION=\"0.8.5\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O1",
+      "-c",
+      "x.c"
+    ],
+    "directory": "/home/korei/suckless/st",
+    "file": "/home/korei/suckless/st/x.c"
+  }
+]

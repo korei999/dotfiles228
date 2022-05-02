@@ -1,15 +1,15 @@
 /** Basic config file **/
 
-configuration {
-	display-drun:	      "Applications:";
-	display-window:	      "Windows: ";
-	drun-display-format:  "{icon} {name}";
-	modi:		      "window,run,drun";
-	show-icons:           true;
-	icon-theme:           "Papirus-Dark";
-	font:	              "Ubuntu 15";
-}
-@theme "/home/korei/.config/rofi/dmenu.rasi"
+/* configuration { */
+/* 	display-drun:	      "Applications:"; */
+/* 	display-window:	      "Windows: "; */
+/* 	drun-display-format:  "{icon} {name}"; */
+/* 	modi:		      "window,run,drun"; */
+/* 	show-icons:           true; */
+/* 	icon-theme:           "Papirus-Dark"; */
+/* 	font:	              "Ubuntu 15"; */
+/* } */
+@theme "/home/korei/.config/rofi/style_2.rasi"
 
 /* element-icon { */
 /* 	size: 24; */

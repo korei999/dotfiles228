@@ -23,11 +23,11 @@ static const int user_bh            = 27;        /* 0 means that dwm will calcul
 
 static const char norm_fg[] = "#dfdfdf";
 static const char norm_bg[] = "#000000";
-static const char norm_border[] = "#000000"; //#4e565a
+static const char norm_border[] = "#000000";
 
-static const char sel_fg[] = "#dfdfdf"; //#bbbbbb
-static const char sel_bg[] = "#674ea7"; // #2551ab
-static const char sel_border[] = "#674ea7"; //#c4c6c8
+static const char sel_fg[] = "#dfdfdf";
+static const char sel_bg[] = "#674ea7";
+static const char sel_border[] = "#674ea7";
 
 static const char *colors[][3]      = {
     /*               fg           bg         border                         */
@@ -44,8 +44,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Sxiv",     NULL,       NULL,       0,            1,           -1 },
+	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
+  	{ "Steam",    NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -92,7 +93,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_bg, "-sf", sel_fg, NULL };
 static const char *rofi2[] = { "rofi", "-show", "run"};
 static const char *rofi[] = { "rofi", "-show", "drun"};
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "tabbed", "-r", "2", "st", "-w", "\'\'", NULL };
 static const char *scrotcmd[]  = { "scrot", "/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png", NULL };
 static const char *scrotscmd[]  = { "scrot", "/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png", "-s", "-f", NULL };
 static const char *scrotucmd[]  = { "scrot", "/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png", "-u", NULL };
@@ -164,8 +165,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_Left,   rotatetags,     {.i = -1 } },
-	{ MODKEY,                       XK_Right,  rotatetags,     {.i = +1 } },
+	{ MODKEY,                XK_bracketleft,   rotatetags,     {.i = -1 } },
+	{ MODKEY,                XK_bracketright,  rotatetags,     {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -177,6 +178,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
     TAGKEYS(                        XK_0,                      9)
 	{ MODKEY|Mod1Mask,              XK_q,      quit,           {0} },
+   	{ MODKEY|Mod1Mask,              XK_r,      quit,           {1} }
 };
 
 /* button definitions */

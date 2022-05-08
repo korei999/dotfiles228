@@ -56,7 +56,7 @@ int allowwindowops = 0;
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
 static double minlatency = 1;
-static double maxlatency = 4;
+static double maxlatency = 1;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -176,7 +176,7 @@ static uint forcemousemod = ShiftMask;
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
  */
-const unsigned int mousescrollincrement = 4;
+const unsigned int mousescrollincrement = 6;
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
 	{ XK_ANY_MOD,           Button4, kscrollup,      {.i = mousescrollincrement},		0, /* !alt */ -1 },

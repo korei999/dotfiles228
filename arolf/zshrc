@@ -1,0 +1,38 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/korei/.zshrc'
+
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
+alias ls="ls --color=auto"
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+##-----------------------------------------------------
+## synth-shell-prompt.sh
+# if [ -f /home/korei/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+# 	source /home/korei/.config/synth-shell/synth-shell-prompt.sh
+# fi
+
+# ##-----------------------------------------------------
+# ## alias
+# if [ -f /home/korei/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
+# 	source /home/korei/.config/synth-shell/alias.sh
+# fi
+# autoload -Uz compinit && compinit
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' menu select
+# alias ls="ls --color=auto"
+
+eval "$(starship init zsh)"
+
+paleofetch

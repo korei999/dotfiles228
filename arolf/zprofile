@@ -1,0 +1,2 @@
+export PATH=$PATH:/home/korei/.local/bin:/home/korei/.cargo/bin
+export EDITOR=nvim

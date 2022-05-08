@@ -1,2 +1,7 @@
 export PATH=$PATH:/home/korei/.local/bin:/home/korei/.cargo/bin
 export EDITOR=nvim
+
+paleofetch
+
+#!/bin/bash
+/home/korei/.dwm/tostartxornotto.sh

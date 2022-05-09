@@ -24,22 +24,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-##-----------------------------------------------------
-## synth-shell-prompt.sh
-# if [ -f /home/korei/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source /home/korei/.config/synth-shell/synth-shell-prompt.sh
-# fi
-
-# ##-----------------------------------------------------
-# ## alias
-# if [ -f /home/korei/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source /home/korei/.config/synth-shell/alias.sh
-# fi
-# autoload -Uz compinit && compinit
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# zstyle ':completion:*' menu select
-# alias ls="ls --color=auto"
-
 eval "$(starship init zsh)"
 
 paleofetch

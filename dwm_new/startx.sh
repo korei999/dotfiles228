@@ -7,7 +7,7 @@ if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
             ;;
             [Nn]) break
             ;;
-            *) printf '%s\n' 'Y or NO.'
+            *) printf '%s\n' 'Y or N.'
             ;;
         esac
     done

@@ -3,5 +3,4 @@ export EDITOR=nvim
 
 paleofetch
 
-#!/bin/bash
-/home/korei/.dwm/tostartxornotto.sh
+/home/korei/.dwm/startx.sh

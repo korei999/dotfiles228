@@ -1,12 +1,8 @@
-killall -q pipewire
-killall -q pipewire-pulse
 killall -q mpris-proxy
-killall -q wireplumber
 killall -q polkit-gnome-authentication-agent-1
 killall -q dwmblocks
 killall -q sxhkd
 
-xset r rate 200 50 &
 setxkbmap -layout us,ru,ua &
 nvidia-settings --load-config-only &
 dwmblocks &
@@ -15,9 +11,6 @@ sxhkd -c /home/korei/.dwm/sxhkdrc &
 nm-applet &
 blueman-applet &
 picom &
-nitrogen --restore &
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/wireplumber &
 mpris-proxy &
 /usr/bin/dunst &
+xwallpaper --output DP-0  --zoom Pictures/Salisbury\ Cathedral\ -\ Moses\ Window\ -\ by\ Ash\ Mills\ Nov\ 2015crop.jpg --output DVI-D-1 --zoom Pictures/Salisbury\ Cathedral\ -\ Moses\ Window\ -\ by\ Ash\ Mills\ Nov\ 2015crop.jpg &

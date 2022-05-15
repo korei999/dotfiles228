@@ -1,21 +1,15 @@
-killall -q pipewire
-killall -q pipewire-pulse
 killall -q mpris-proxy
-killall -q wireplumber
 killall -q polkit-gnome-authentication-agent-1
-killall -q nm-applet
+killall -q dwmblocks
 
-xset r rate 200 50 &
 setxkbmap -layout us,ru,ua &
-~/.config/i3/polybar/launch.sh &
+/home/korei/.config/i3/polybar/launch.sh &
 nvidia-settings --load-config-only &
+dwmblocks &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 blueman-applet &
 picom &
-nitrogen --restore &
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/wireplumber &
 mpris-proxy &
 /usr/bin/dunst &
+xwallpaper --output DP-0  --zoom Pictures/Salisbury\ Cathedral\ -\ Moses\ Window\ -\ by\ Ash\ Mills\ Nov\ 2015crop.jpg --output DVI-D-1 --zoom Pictures/Salisbury\ Cathedral\ -\ Moses\ Window\ -\ by\ Ash\ Mills\ Nov\ 2015crop.jpg &

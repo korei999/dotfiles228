@@ -111,15 +111,15 @@ font-0 = Ubuntu Nerd Font:size=15:antialias=true;3
 ; font-1 = Ubuntu:fontformat=truetype:size=15:antialias=false;0
 ; font-2 = Ubuntu:size=15:antialias=true;0
 
-modules-left = bspwm xwindow
+modules-left = i3 xwindow
 ; modules-center = 
 modules-right = memory gputemp cputemp date2 xkeyboard
 ; tray-position = right
 ; tray-padding = 2
 ;tray-background = #0063ff
 
-wm-name = bspwm
-wm-restack = bspwm
+wm-name = i3
+; wm-restack = bspwm
 ;wm-restack = i3
 
 ; override-redirect = true
@@ -251,7 +251,7 @@ label-foreground =  ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-click-left = st -e sh -c 'tput civis;st btop;stty raw;dd bs=1 count=1 of=/dev/null' &
+click-left = st btop
 ; kitty btop &
 
 [module/gputemp]
@@ -265,7 +265,7 @@ label-foreground =  ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-click-left = st -e sh -c 'tput civis;st nvtop;stty raw;dd bs=1 count=1 of=/dev/null' &
+click-left = st nvtop
 ; kitty nvtop &
 
 [module/memory]

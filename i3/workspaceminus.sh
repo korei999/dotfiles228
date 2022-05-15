@@ -6,4 +6,3 @@ case "$CurrWS" in
     *) i3 workspace $((CurrWS-1))
     ;;
 esac
-

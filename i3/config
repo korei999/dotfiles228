@@ -11,17 +11,20 @@
 
 set $mod Mod4
 
-smart_borders on
-smart_gaps on
-
 #start in opposite orientation from your monitor
 # default_orientation vertical 
 
 # exec_always --no-startup-id autotiling
 
-for_window [class="^.*"] border pixel 3
+smart_borders on
+smart_gaps on
+
 # gaps inner 5
 # gaps outer 50
+
+for_window [class="^.*"] border pixel 3
+for_window [class="Sxiv"] floating enable
+for_window [class="mpv"] floating enable
 
 bindsym $mod+w Kill
 
@@ -39,6 +42,10 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
+# volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-control --volume-max 100 down
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-control --volume-max 100 up
+
 # screenshots
 bindsym $mod+Print exec --no-startup-id scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png'
 bindsym $mod+Control+Print exec --no-startup-id scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png' -u
@@ -53,14 +60,21 @@ bindsym --whole-window --border $mod+button5 exec --no-startup-id /home/korei/.c
 bindsym $mod+bracketleft exec --no-startup-id /home/korei/.config/i3/workspaceminus.sh
 bindsym $mod+bracketright exec --no-startup-id /home/korei/.config/i3/workspaceplus.sh
 
-
 bindsym $mod+Control+Left focus output left
 bindsym $mod+Control+Right focus output right
 
-#stuff
+# systemctl restart --user pipewire
 bindsym $mod+Control+Mod1+backslash exec --no-startup-id systemctl restart --user pipewire; exec --no-startup-id notify-send "pipewire restarted"
+# Pulsemixer
 bindsym $mod+Pause exec --no-startup-id st pulsemixer
+# Dunst
 bindsym $mod+Shift+Pause exec --no-startup-id dunstctl set-paused toggle; exec --no-startup-id /home/korei/.dwm/dunstcheck.sh
+# Slock
+bindsym --release $mod+Shift+BackSpace exec --no-startup-id slock
+# Sleep
+bindsym $mod+Control+Mod1+BackSpace exec --no-startup-id systemctl suspend
+# Offay
+bindsym $mod+Control+Mod1+Escape exec --no-startup-id systemctl poweroff
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

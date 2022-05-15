@@ -61,7 +61,7 @@ modules-right = powermenu pulseaudio-control date2 xkeyboard
 
 tray-position = right
 tray-padding = 1
-tray-maxsize = 20
+tray-maxsize = 27
 ;tray-background = #0063ff
 
 wm-name = i3

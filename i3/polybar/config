@@ -377,17 +377,17 @@ menu-0-2-exec = menu-open-3
 ; menu-1-1-exec = loginctl reboot
 
 menu-1-0 = YES
-menu-1-0-exec = loginctl reboot
+menu-1-0-exec = systemctl reboot
 menu-1-1 = NO
 menu-1-1-exec = menu-open-0
 
 menu-2-0 = YES
-menu-2-0-exec = loginctl poweroff
+menu-2-0-exec = systemctl poweroff
 menu-2-1 = NO
 menu-2-1-exec = menu-open-0
 
 menu-3-0 = YES
-menu-3-0-exec = loginctl suspend
+menu-3-0-exec = systemctl suspend
 menu-3-1 = NO
 menu-3-1-exec = menu-open-0
 

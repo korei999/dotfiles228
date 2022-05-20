@@ -62,7 +62,7 @@ bindsym $mod+bracketleft exec --no-startup-id /home/korei/.config/i3/workspacemi
 bindsym $mod+bracketright exec --no-startup-id /home/korei/.config/i3/workspaceplus.sh
 
 bindsym --whole-window --border $mod+Shift+button4 workspace prev
-bindsym --whole-window --border $mod+Shift+button5 workspace prev
+bindsym --whole-window --border $mod+Shift+button5 workspace next
 bindsym $mod+Shift+bracketleft workspace prev
 bindsym $mod+Shift+bracketright workspace next
 

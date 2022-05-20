@@ -25,6 +25,7 @@ smart_gaps on
 for_window [class="^.*"] border pixel 3
 for_window [class="Sxiv"] floating enable
 for_window [class="mpv"] floating enable
+for_window [class="mpv"] resize set 1280 960
 
 bindsym $mod+w Kill
 
@@ -61,7 +62,7 @@ bindsym $mod+bracketleft exec --no-startup-id /home/korei/.config/i3/workspacemi
 bindsym $mod+bracketright exec --no-startup-id /home/korei/.config/i3/workspaceplus.sh
 
 bindsym --whole-window --border $mod+Shift+button4 workspace prev
-bindsym --whole-window --border $mod+Shift+button5 workspace next
+bindsym --whole-window --border $mod+Shift+button5 workspace prev
 bindsym $mod+Shift+bracketleft workspace prev
 bindsym $mod+Shift+bracketright workspace next
 

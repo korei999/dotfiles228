@@ -16,11 +16,13 @@ set $mod Mod4
 
 # exec_always --no-startup-id autotiling
 
-smart_borders on
-smart_gaps on
+#smart_borders on
+#smart_gaps on
 
 # gaps inner 5
 # gaps outer 50
+
+hide_edge_borders smart
 
 for_window [class="^.*"] border pixel 3
 for_window [class="Sxiv"] floating enable
@@ -52,7 +54,7 @@ bindsym $mod+Print exec --no-startup-id scrot '/home/korei/Pictures/Screens/%Y-%
 bindsym $mod+Control+Print exec --no-startup-id scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png' -u
 bindsym --release $mod+Shift+Print exec --no-startup-id scrot '/home/korei/Pictures/Screens/%Y-%m-%d-%T-screenshot.png' -fs
 
-#pcmanfm
+# pcmanfm
 bindsym $mod+e exec --no-startup-id pcmanfm
 
 # scroll between workspaces
@@ -75,7 +77,6 @@ bindsym $mod+Control+Mod1+backslash exec --no-startup-id systemctl restart --use
 # Pulsemixer
 bindsym $mod+Pause exec --no-startup-id st pulsemixer
 # Dunst
-bindsym $mod+Shift+Pause exec --no-startup-id dunstctl set-paused toggle; exec --no-startup-id /home/korei/.dwm/dunstcheck.sh
 # Slock
 bindsym --release $mod+Shift+BackSpace exec --no-startup-id slock
 # Sleep

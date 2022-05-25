@@ -11,4 +11,3 @@ picom &
 mpris-proxy &
 /usr/bin/dunst &
 xwallpaper --output DP-0  --zoom Pictures/Salisbury\ Cathedral\ -\ Moses\ Window\ -\ by\ Ash\ Mills\ Nov\ 2015crop.jpg --output DVI-D-1 --zoom Pictures/Salisbury\ Cathedral\ -\ Moses\ Window\ -\ by\ Ash\ Mills\ Nov\ 2015crop.jpg &
-# gwe --hide-window &

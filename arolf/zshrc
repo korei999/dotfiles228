@@ -7,18 +7,22 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/korei/.zshrc'
-
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
+
 alias ls="ls --color=auto"
-bindkey "^[[1~" beginning-of-line
+alias byzanz-rec="byzanz-record --height=1080 --width=1920"
+
+bindkey "^[[1~"   beginning-of-line
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
-bindkey "^[[4~" end-of-line
+bindkey "^[[4~"   end-of-line
 bindkey  "^[[3~"  delete-char
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+bindkey "^H" backward-kill-word
+
 setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
@@ -29,4 +33,6 @@ compinit
 
 eval "$(starship init zsh)"
 
-paleofetch
+fastfetch -l void
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

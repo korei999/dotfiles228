@@ -15,6 +15,10 @@ alias ls="ls --color=auto"
 alias rec="byzanz-record --height=1080 --width=1920"
 alias sw="$HOME/.config/i3/i3-master-layout/i3-swallow-stack.py"
 
+function cd {
+    builtin cd "$@" && ls -a -F
+    }
+
 bindkey "^[[1~"   beginning-of-line
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line

@@ -12,7 +12,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
 alias ls="ls --color=auto"
-alias byzanz-rec="byzanz-record --height=1080 --width=1920"
+alias rec="byzanz-record --height=1080 --width=1920"
+alias sw="$HOME/.config/i3/i3-master-layout/i3-swallow-stack.py"
 
 bindkey "^[[1~"   beginning-of-line
 bindkey  "^[[H"   beginning-of-line
@@ -21,7 +22,7 @@ bindkey "^[[4~"   end-of-line
 bindkey  "^[[3~"  delete-char
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
-bindkey "^H" backward-kill-word
+bindkey '^[^?' backward-kill-word
 
 setopt PROMPT_CR
 setopt PROMPT_SP

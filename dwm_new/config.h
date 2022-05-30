@@ -22,12 +22,13 @@ static const char dmenufont[]       = "Ubuntu Nerd Font:size=15";
 static const int user_bh            = 27;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 
 static const char norm_fg[] = "#dfdfdf";
+
 static const char norm_bg[] = "#000000";
 static const char norm_border[] = "#000000";
 
 static const char sel_fg[] = "#dfdfdf";
 static const char sel_bg[] = "#674ea7";
-static const char sel_border[] = "#674ea7";
+static const char sel_border[] = "#973552";
 
 static const char *colors[][3]      = {
     /*               fg           bg         border                         */
@@ -117,14 +118,14 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Print,  spawn,          {.v = scrotucmd} },
     { MODKEY,                       XK_p,      spawn,          {.v = rofi } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi2 } },
-	// { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	// { MODKEY|ControlMask,           XK_i,      incnmaster,     {.i = +1 } },
 	// { MODKEY|ControlMask,           XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_g,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },

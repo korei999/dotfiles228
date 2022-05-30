@@ -32,7 +32,7 @@ for_window [class="mpv"] resize set 1280 960
 bindsym $mod+w Kill
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #674ea7 #000000 #ffffff #674ea7   #674ea7
+client.focused          #ff7446 #000000 #ffffff #ff7446   #ff7446
 client.focused_inactive #000000 #000000 #ffffff #000000   #000000
 client.unfocused        #000000 #000000 #000000 #000000   #000000
 client.urgent           #000000 #900000 #ffffff #900000   #900000
@@ -77,6 +77,7 @@ bindsym $mod+Control+Mod1+backslash exec --no-startup-id systemctl restart --use
 # Pulsemixer
 bindsym $mod+Pause exec --no-startup-id st pulsemixer
 # Dunst
+bindsym $mod+Shift+Pause exec --no-startup-id dunstctl set-paused toggle; exec --no-startup-id /home/korei/.dwm/dunstcheck.sh
 # Slock
 bindsym --release $mod+Shift+BackSpace exec --no-startup-id slock
 # Sleep
@@ -135,9 +136,9 @@ bindsym $mod+Shift+p exec --no-startup-id rofi -show run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the currofi -show drun
@@ -147,9 +148,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+i move up
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:

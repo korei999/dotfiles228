@@ -3,7 +3,7 @@ killall -q polkit-gnome-authentication-agent-1
 
 setxkbmap -layout us,ru,ua &
 /home/korei/.config/i3/polybar/launch.sh &
-nvidia-settings --load-config-only &
+# nvidia-settings --load-config-only &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nm-applet &
 blueman-applet &

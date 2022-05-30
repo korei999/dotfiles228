@@ -1,6 +1,6 @@
--- General config
 vim.cmd 'colorscheme monokai_pro'
 vim.opt['number'] = true
+vim.opt['relativenumber'] = true
 vim.opt['ruler'] = true
 vim.opt['splitright'] = true
 vim.opt['splitbelow'] = true
@@ -34,10 +34,10 @@ vim.opt['undolevels'] = 1000
 vim.opt['undoreload'] = 10000
 
 -- Stop comments on newline
-vim.cmd([[autocmd BufWinEnter * :set formatoptions-=c formatoptions-=r formatoptions-=o]])
+-- vim.cmd([[autocmd BufWinEnter * :set formatoptions-=c formatoptions-=r formatoptions-=o]])
 
 -- Disable lualine on Nvim-tree
-vim.cmd ([[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == 'NvimTree' | set laststatus=0 | else | set laststatus=2 | endif]])
+-- vim.cmd ([[au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == 'NvimTree' | set laststatus=0 | else | set laststatus=2 | endif]])
 
 vim.cmd('command CDD cd %:p:h')
 
@@ -46,11 +46,6 @@ vim.cmd([[
     nnoremap d "_d
     nnoremap D "_D
     vnoremap d "_d
-    noremap h i
-    noremap H I
-    map i <Up>
-    map j <Left>
-    map k <Down>
 ]])
 
  --bindings
@@ -61,8 +56,8 @@ map = vim.api.nvim_set_keymap
 map('n', '<Leader>n', ':enew<CR>', { noremap = true, silent = true })
 map('n', '<Leader>f', ':Telescope find_files<CR>', { noremap = true, silent = true })
 map('n', '<Leader>o', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
-map('n', '<Leader>[', ':vertical resize +7<CR>', { noremap = true, silent = true })
-map('n', '<Leader>]', ':vertical resize -7<CR>', { noremap = true, silent = true })
+-- map('n', '<Leader>[', ':vertical resize +7<CR>', { noremap = true, silent = true })
+-- map('n', '<Leader>]', ':vertical resize -7<CR>', { noremap = true, silent = true })
 map('n', '<Leader>cc', ':ColorizerToggle<CR>', { noremap = true, silent = true })
 map('n', '<Leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 map('n', '<Leader>b', ':Bracey<CR>', { noremap = true, silent = true })

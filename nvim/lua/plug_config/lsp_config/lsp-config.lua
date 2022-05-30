@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr)
 
 end
 
-local servers = {'cmake', 'html', 'rust_analyzer', 'bashls', 'ccls', 'asm_lsp'}
+local servers = {'cmake', 'bashls', 'clangd', 'asm_lsp', 'sumneko_lua'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -44,3 +44,14 @@ for _, lsp in ipairs(servers) do
     root_dir = function() return vim.loop.cwd() end
   }
 end
+
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      workspace = {
+        preloadFileSize = 500
+      }
+    }
+  }
+}
+

@@ -18,20 +18,26 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #000000
-background-alt = #674ea7
+background = #282828
+background-alt = #83a598
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #ebdbb2
 foreground-alt = #555
-primary = #674ea7
+primary = #458588
 secondary = #cb565d
 alert = #bd2c40
+blueish = #5e81ac
+pinkish = #d3869b
+orngish = #fabd2f
+green = #b8bb26
 
 [bar/example]
-monitor = DP-0
+; monitor = DP-0
 ; monitor = DVI-D-1
+monitor = DisplayPort-0
+
 width = 100%
-height = 27
+height = 30
 ; offset-x = 1%
 ; offset-y = 1%
 ; radius = 6.0
@@ -49,15 +55,16 @@ border-color = #00000000
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
-font-0 = Ubuntu Nerd Font:size=15:antialias=true;3
-
+font-0 = Ubuntu Nerd Font:size=14:antialias=true;3
+font-1 = Noto Sans CJK JP:size=14:antialias=true;3
+font-2 = Noto Color Emoji:size=14:antialias=true;3
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = powermenu pulseaudio-control date2 xkeyboard
+modules-right = pulseaudio-control date2 xkeyboard
 
 tray-position = right
 tray-padding = 1
@@ -81,9 +88,10 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/right]
-monitor = DVI-D-1
+monitor = DisplayPort-1
+; monitor = DVI-D-1
 width = 100%
-height = 27
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 ; radius = 6.0
@@ -99,21 +107,23 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 ; font-0 = Bitstream Vera Sans:size=13:antialias=true;1
 ; font-1 = DejaVu Sans:fontformat=truetype:size=13:antialias=false;0
 ; font-2 = Bitstream Vera Sans:size=13:antialias=true;1
 ;
-font-0 = Ubuntu Nerd Font:size=15:antialias=true;3
+font-0 = Ubuntu Nerd Font:size=14:antialias=true;3
+font-1 = Noto Sans CJK JP:size=14:antialias=true;3
+font-2 = Noto Color Emoji:size=14:antialias=true;3
 ; font-1 = Ubuntu:fontformat=truetype:size=15:antialias=false;0
 ; font-2 = Ubuntu:size=15:antialias=true;0
 
 modules-left = i3 xwindow
 ; modules-center = 
-modules-right = memory gputemp cputemp date2 xkeyboard
+modules-right = memory amdtemp cputemp date2 xkeyboard
 ; tray-position = right
 ; tray-padding = 2
 ;tray-background = #0063ff
@@ -141,7 +151,7 @@ label = %title:0:64:%
 ; label-padding-right = 0
 ; label-empty-padding-left = 0
 ; label-empty-padding-right = 0
-format-background = #674ea7
+format-background = ${colors.primary}
 ; format-foreground = #000
 format-padding = 2
 
@@ -153,13 +163,14 @@ blacklist-0 = num lock
 ; format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
-format-background = #674ea7
+format-background = ${colors.blueish}
+format-padding = 2
 
-label-layout = " %layout%"
+label-layout = "%layout%"
 ; label-layout-underline = ${colors.secondary}
 
-label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-padding = 1
+; label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
@@ -204,30 +215,32 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 5
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-foreground = ${colors.background}
+; label-focused-underline= ${colors.primary}
+label-focused-padding = 5
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 5
+label-unfocused-background = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 ; label-visible-background = ${self.#f6ca9flabel-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+; label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 4
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -243,6 +256,7 @@ label = %percentage:2%%
 [module/cputemp]
 type = custom/script
 exec = sensors | awk '/^Package id 0/ { print $4}'
+format-padding = 2
 interval = 3
 format = CPU: <label>
 format-prefix = 﨏 
@@ -268,13 +282,29 @@ format-background = ${colors.background}
 click-left = st nvtop
 ; kitty nvtop &
 
+[module/amdtemp]
+type = custom/script
+exec = sensors | awk '/^junction/ { print $2}'
+interval = 3
+format = GPU: <label>
+format-prefix = 﨏 
+format-prefix-foreground = ${colors.secondary}
+label-foreground =  ${colors.background}
+format-foreground = ${colors.background}
+format-background = ${colors.green}
+format-padding = 2
+
+click-left = st sudo watch -n 0.5 cat /sys/kernel/debug/dri/0/amdgpu_pm_info
+
+
 [module/memory]
 type = internal/memory
 interval = 5
+format-padding = 2
 ; format-prefix = "|   "
 ; format-prefix-foreground = ${colors.foreground}
 ; format-underline = #4bffdc  
-format-background = #000000
+format-background = ${colors.background}
 label-foreground = ${colors.foreground}
 label = Ram: %gb_used% / %gb_total%
 
@@ -302,13 +332,15 @@ label = ﭷ %date% %time%
 type = custom/script
 exec = date '+%b %d (%a) %I:%M:%S %p'
 interval = 1
+format-padding = 2
+; label-padding = 1
 
 format = <label>
 format-prefix = ﭷ
-format-prefix-foreground = #c6a280
-label-foreground =  ${colors.foreground}
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-prefix-foreground = ${colors.background}
+label-foreground =  ${colors.background}
+format-foreground = ${colors.background}
+format-background = ${colors.pinkish}
 
 click-right = st -e sh -c 'tput civis;cal -y;stty raw;dd bs=1 count=1 of=/dev/null' &
 click-left = notify-send -t 5000 "$(date '+%D')" "$(cal)" &
@@ -335,18 +367,19 @@ ramp-foreground = ${colors.foreground-alt}
 [module/pulseaudio-control]
 type = custom/script
 tail = true
-label-padding = 0
-label-foreground = ${colors.foreground}
+format-padding = 2
+label-foreground = ${colors.background}
+format-background = ${colors.green}
 
 # Icons mixed from Font Awesome 5 and Material Icons
 # You can copy-paste your options for each possible action, which is more
 # trouble-free but repetitive, or apply only the relevant ones (for example
 # --sink-blacklist is only needed for next-sink).
-exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.analog-stereo: Speakers" --sink-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo: Mobo" listen
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --node-nicknames-from "device.description" --node-nickname "alsa_output.usb-Focusrite_Scarlett_Solo_USB-00.analog-stereo: Speakers" --node-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo: Mobo" listen
 click-right = sh -c 'tput civis;st pulsemixer;stty raw;dd bs=1 count=1 of=/dev/null' &
 ; kitty pulsemixer &
 click-left = pulseaudio-control togmute
-click-middle = pulseaudio-control --sink-blacklist "alsa_output.usb-Samson_Technologies_Samson_GoMic-00.analog-stereo" --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1" next-sink
+click-middle = pulseaudio-control --node-blacklist "alsa_output.usb-Samson_Technologies_Samson_GoMic-00.analog-stereo" --node-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1" next-node
 scroll-up = pulseaudio-control --volume-max 100 up
 scroll-down = pulseaudio-control --volume-max 100 down
 

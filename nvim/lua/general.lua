@@ -1,6 +1,6 @@
 vim.cmd 'colorscheme monokai_pro'
 vim.opt['number'] = true
-vim.opt['relativenumber'] = true
+vim.opt['relativenumber'] = false
 vim.opt['ruler'] = true
 vim.opt['splitright'] = true
 vim.opt['splitbelow'] = true
@@ -29,7 +29,8 @@ vim.opt['guicursor'] = 'i:block'
 
 -- Persistent undo
 vim.opt['undofile'] = true
-vim.opt['undodir'] = '/home/korei/.cache/nvim/undo'
+vim.opt.undodir = os.getenv( "HOME" ) .. '/.cache/nvim/undo'
+-- vim.opt['undodir'] = "/home/korei/.cache/nvim/undo"
 vim.opt['undolevels'] = 1000
 vim.opt['undoreload'] = 10000
 
